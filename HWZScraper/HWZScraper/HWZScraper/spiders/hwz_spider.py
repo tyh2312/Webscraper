@@ -23,11 +23,11 @@ class JapanSpider(scrapy.Spider):
             yield response.follow(next_page, self.parse)
 
     def parse_thread(self, response):
-        title = response.css('h1.p-title-value::text').get()
+        topic = response.css('h1.p-title-value::text').get()
         for post in response.css('.message--post'):
             
             yield {
-                'title': title,
+                'topic': topic,
                 'author': post.css('.username::text').get(),
                 'content': post.css('.bbWrapper::text').get(),
                 
