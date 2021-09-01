@@ -9,17 +9,14 @@ from itemadapter import ItemAdapter
 # import pymongo
 import pymongo
 
-# scrapy configurations
-from scrapy.conf import settings
-from scrapy.exceptions import DropItem
-from scrapy import log
-
-class HwzscraperMongoDBPipeline(object):
+class HWZScraperPipeline:
     def __init__(self):
-        # specify the connection for mongoDB
-        connection = pymongo.MongoClient(settings["localhost"], settings["27017"])  
-        db = connection[settings["HwzPosts"]]
-        self.collection = db[settings[["threads"]]
+        connection = pymongo.MongoClient(
+            "localhost",
+            27017
+        )
+        db = connection["HWZScraper"]
+        self.collection = db["posts"]
 
     def process_item(self, item, spider):
         valid = True
@@ -29,6 +26,4 @@ class HwzscraperMongoDBPipeline(object):
                 raise DropItem("Missing {0}!".format(data))
         if valid:
             self.collection.insert(dict(item))
-            log.msg("Thread post added to MOngoDB database!", 
-            level=log.DEBUG, spider=spider)
         return item
