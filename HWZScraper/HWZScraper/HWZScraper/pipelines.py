@@ -15,7 +15,7 @@ class HWZScraperPipeline:
             "localhost",
             27017
         )
-        db = connection["HWZScraper"]
+        db = connection["HwzPosts"]
         self.collection = db["posts"]
 
     def process_item(self, item, spider):
