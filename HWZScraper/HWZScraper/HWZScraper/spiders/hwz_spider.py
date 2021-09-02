@@ -1,5 +1,7 @@
 # Import Scrapy
 import scrapy
+# import logging for setting log level
+import logging
 
 # Create Spider class
 class HWZoneSpider(scrapy.Spider):
@@ -9,6 +11,11 @@ class HWZoneSpider(scrapy.Spider):
 
     # specify url of page to crawl posts from
     start_urls = ["https://forums.hardwarezone.com.sg/forums/pc-gaming.382/"]
+
+    # custom settings
+    custom_settings = {
+        'LOG_LEVEL': logging.WARNING
+    }
 
     def parse(self, response):
         for thread in response.xpath("//div[@class='structItem-title']/a"):

@@ -15,7 +15,7 @@ NEWSPIDER_MODULE = 'HWZScraper.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'HWZScraper (+http://www.yourdomain.com)'
-USER_AGENT = Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36
+#USER_AGENT_LIST = "./HWZScraper/useragents.txt"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -53,7 +53,11 @@ COOKIES_ENABLED = False
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
 #    'HWZScraper.middlewares.HwzscraperDownloaderMiddleware': 543,
+    # to disable default UserAgentMiddleware and enable RandomUserAgentMiddleware
+    #'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware': None,
+    #'random_useragent.RandomUserAgentMiddleware': 400
 #}
+
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
