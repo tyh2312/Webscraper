@@ -29,10 +29,27 @@ Then proceed to install python3-venv:
 
 `sudo apt-get install python3-venv`
 
-# Cloning the repository
+# Clone the repository
 Once the installations are completed, clone this repository into your local site folder:
 
 `git clone git@github.com:tyh2312/Webscraper.git`
 
+# Create a virtual environment
+Create a virtual environment and activate it.
 
+`virtualenv .`
 
+After creating a virtual environment, enter the following command to activate it.
+
+`source bin/activate`
+
+# Installations in virtual environment
+The following installations need to then be installed inside the activated virtual environment.
+
+* Scrapy
+
+`pip install scrapy`
+
+* pymongo
+
+`pip install pymongo`
