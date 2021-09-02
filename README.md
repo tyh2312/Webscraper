@@ -53,3 +53,16 @@ The following installations need to then be installed inside the activated virtu
 * pymongo
 
 `pip install pymongo`
+
+# Scraping of Hardwarezone posts
+Before running the spider, navigate to the file location:
+
+`~/Webscraper/HWZScraper/HWZScraper/HWZScraper/spiders$`
+
+Then type in the command and press enter:
+
+`scrapy runspider hwz_spider.py -o results.json`
+
+When the spider finishes crawling the posts, you will be able to check through the scraped posts by entering `nano results.json`.
+
+If the results are the right output you want, exit the editor and navigate to `~/Webscraper/HWZScraper/HWZScraper/HWZScraper` and run the following command: `scrapy crawl HwzPosts`. Once the posts have been scraped, open Robo 3T and connect to the local server. You should see a database called 'HwzPosts' with the scraped posts. 
