@@ -6,7 +6,6 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
-# import pymongo
 import pymongo
 
 class HWZScraperPipeline:
