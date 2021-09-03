@@ -25,4 +25,7 @@ class HWZScraperPipeline:
                 raise DropItem("Missing {0}!".format(data))
         if valid:
             self.collection.insert(dict(item))
+            # logging message for successful post add
+            log.msg("Post added to MongoDB database!",
+                    level=log.DEBUG, spider=spider)
         return item
